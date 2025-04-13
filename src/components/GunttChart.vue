@@ -1,15 +1,18 @@
 <script setup lang="ts">
-import dayjs from 'dayjs'
 import { computed, onMounted, ref } from 'vue'
 import trucks from '../mock/truckRoutes.json'
 
 const pxPerHour = 128
 const hours = Array.from({ length: 24 }, (_, i) => i + 1)
-const now = dayjs()
+const now = new Date()
 
 const currentTimeOffset = computed(() => {
-  const start = now.startOf('day')
-  const minutes = now.diff(start, 'minute')
+  const start = new Date(now)
+  start.setHours(0, 0, 0, 0) // обнуляем до начала дня
+
+  const diffMs = now.getTime() - start.getTime()
+  const minutes = diffMs / 1000 / 60
+
   return (minutes / 60) * pxPerHour
 })
 
