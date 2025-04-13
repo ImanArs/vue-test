@@ -9,3 +9,7 @@ body,
 html.dark {
   color-scheme: dark;
 }
+
+html {
+  background: '#fff' !important;
+}
