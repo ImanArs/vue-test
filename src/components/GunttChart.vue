@@ -1,14 +1,16 @@
 <script setup lang="ts">
+import { Expand } from 'lucide-vue-next'
 import { computed, onMounted, ref } from 'vue'
+
 import trucks from '../mock/truckRoutes.json'
 
-const pxPerHour = 128
+const pxPerHour = 64
 const hours = Array.from({ length: 24 }, (_, i) => i + 1)
 const now = new Date()
 
 const currentTimeOffset = computed(() => {
   const start = new Date(now)
-  start.setHours(0, 0, 0, 0) // обнуляем до начала дня
+  start.setHours(0, 0, 0, 0)
 
   const diffMs = now.getTime() - start.getTime()
   const minutes = diffMs / 1000 / 60
@@ -25,8 +27,6 @@ function getStatusColor(status: string) {
 }
 
 function getJobStyle(job: any) {
-  const pxPerHour = 128
-
   const start = new Date(job.plan_start_at)
   const end = new Date(job.plan_end_at)
 
@@ -40,7 +40,6 @@ function getJobStyle(job: any) {
   return {
     left: `${startHours * pxPerHour - pxPerHour}px`,
     width: `calc(${duration * pxPerHour}px)`,
-    top: '0px',
   }
 }
 
@@ -63,7 +62,7 @@ function onDrag(event: MouseEvent) {
   const rect = boardRef.value.getBoundingClientRect()
   const x = event.clientX - rect.left
 
-  redLineX.value = Math.max(0, Math.min(x, rect.width)) // ограничим в пределах доски
+  redLineX.value = Math.max(0, Math.min(x, rect.width))
 }
 
 onMounted(() => {
@@ -73,50 +72,65 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="boardRef" class="relative" :style="{ width: `${hours.length * pxPerHour + 128}px` }">
-    <div class="text-black bg-white h-screen w-full overflow-auto">
-      <div class="border-t border-black relative" :style="{ width: `${hours.length * pxPerHour + 128}px` }">
-        <div class="border-b bg-white flex top-0 sticky z-10">
-          <div class="shrink-0 w-32" />
-          <div class="flex flex-1">
-            <div
-              v-for="hour in hours"
-              :key="hour"
-              class="text-xs text-black py-2 text-center border-l w-[128px] select-none"
-            >
-              {{ hour }}:00
-            </div>
-          </div>
-        </div>
+  <div ref="boardRef" class="relative">
+    <div class="mx-auto border-2 border-[#d3d3d3] rounded-[10px_10px_0px_0px] bg-white w-[1028px] relative overflow-hidden">
+      <div class="text-black p-2 border-b border-[#d3d3d3] flex items-center left-0 top-0 justify-between">
+        <h2 class="text-[20px] font-semibold">
+          Route Schedule
+        </h2>
+        <button>
+          <Expand />
+        </button>
+      </div>
 
-        <div v-for="truck in trucks" :key="truck.truck.id" class="border-b flex h-16">
-          <div class="text-xs text-black p-2 bg-gray-100 shrink-0 w-32 select-none">
-            {{ truck.truck.plate_number.trim() }}
-          </div>
-
-          <div class="flex-1 w-full select-none relative">
-            <div
-              v-for="route in truck.routes"
-              :key="`route-${route.id}`"
-            >
+      <div class="text-black mx-auto p-10 h-auto min-h-[338px] w-[1028px] relative overflow-auto">
+        <div class="relative" :style="{ width: `${hours.length * pxPerHour + 64}px` }">
+          <div class="bg-white flex top-0 sticky z-10">
+            <div class="shrink-0 w-20" />
+            <div class="flex flex-1">
               <div
-                v-for="job in route.jobs"
-                :key="`job-${job.id}`"
-                class="text-xs px-2 rounded-lg flex h-10 items-center absolute"
-                :style="getJobStyle(job)"
-                :class="getStatusColor(job.status)"
+                v-for="hour in hours"
+                :key="hour"
+                class="text-xs text-black py-2 text-center flex flex-col gap-2 w-[64px] select-none items-center"
               >
-                {{ job.pickup_location.name }}
+                <span>{{ hour }}:00</span>
+                <div class="bg-black h-2 w-[1px]" />
               </div>
             </div>
           </div>
-        </div>
 
-        <div
-          class="bg-red-600 w-[2px] cursor-ew-resize absolute z-20"
-          :style="{ left: `${redLineX}px`, height: `${trucks.length * 128}px`, top: '0px' }"
-          @mousedown="startDrag"
-        />
+          <div v-for="truck in trucks" :key="truck.truck.id" class="flex h-16 items-center">
+            <div class="text-base text-white p-2 rounded-[6px_0px_0px_6px] bg-[#333] shrink-0 max-h-10 w-20 select-none">
+              {{ truck.truck.plate_number.trim() }}
+            </div>
+
+            <div class="flex h-[60px] h-full w-full select-none items-center relative">
+              <div
+                v-for="route in truck.routes"
+                :key="`route-${route.id}`"
+                class="bg-red-500 h-10 relative"
+              >
+                <div
+                  v-for="job in route.jobs"
+                  :key="`job-${job.id}`"
+                  class="text-xs px-2 rounded-[12px] flex h-10 items-center absolute"
+                  :style="getJobStyle(job)"
+                  :class="getStatusColor(job.status)"
+                >
+                  {{ job.pickup_location.name }}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-black w-[2px] cursor-ew-resize top-[32px] absolute z-20"
+            :style="{ left: `${redLineX}px`, height: `${trucks.length * 100}px` }"
+            @mousedown="startDrag"
+          >
+            <div class="rounded-full bg-black h-4 w-4 transform top-0 absolute -translate-x-[50%] -left-4" />
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@vueuse/core": "catalog:frontend",
+    "lucide-vue-next": "catalog:",
     "vue": "catalog:frontend",
     "vue-router": "catalog:frontend"
   },

@@ -1,5 +1,8 @@
 packages: []
 
+catalog:
+  lucide-vue: ^0.488.0
+  lucide-vue-next: ^0.488.0
 catalogs:
 
   build:
