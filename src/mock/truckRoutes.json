@@ -4,120 +4,170 @@
       "id": 3,
       "created_at": "2025-03-17T13:27:18.209317Z",
       "type": "TRUCK_TYPE_CONSTRUCTION",
-      "plate_number": " 222EX02",
+      "plate_number": "381BCJ02",
       "status": "TRUCK_STATUS_ACTIVE",
       "owner_organization_id": 1,
-      "model": "BMW Truck",
-      "truck_weight": 3470.498041809091
+      "model": "MAN",
+      "truck_weight": 3470.49
+    },
+    "routes": []
+  },
+  {
+    "truck": {
+      "id": 4,
+      "created_at": "2025-04-19T18:22:30.853679Z",
+      "type": "TRUCK_TYPE_CONSTRUCTION",
+      "plate_number": "382BCJ02",
+      "status": "TRUCK_STATUS_ACTIVE",
+      "owner_organization_id": 1,
+      "model": "MAN 1",
+      "truck_weight": 3410.5
     },
     "routes": [
       {
-        "id": 40,
-        "created_at": "2025-04-12T10:21:01.542765Z",
+        "id": 210,
+        "created_at": "2025-04-19T18:22:30.853744Z",
         "owner_organization_id": 1,
-        "driver_on_shift_id": 19,
-        "source_lon": 76.566586,
-        "source_lat": 43.242206,
-        "destination_lon": 76.566586,
-        "destination_lat": 43.242206,
+        "driver_on_shift_id": 11,
+        "source_lon": 76.56479232961792,
+        "source_lat": 44.009119178431675,
+        "destination_lon": 76.83862700105404,
+        "destination_lat": 43.5154515979323,
         "author_id": 1,
-        "plan_start_at": "2025-04-12T10:21:01.599970Z",
-        "plan_end_at": "2025-04-12T13:31:16.599970Z",
+        "plan_start_at": "2025-04-12T10:26:00Z",
+        "plan_end_at": "2025-04-12T10:57:00Z",
         "fact_start_at": null,
         "fact_end_at": null,
-        "status": "ROUTE_STATUS_CREATED",
-        "created_by_ai": true,
+        "status": "FINISHED",
+        "created_by_ai": false,
         "jobs": [
           {
-            "id": 42,
-            "created_at": "2025-04-09T23:34:00.762921Z",
+            "id": 110,
+            "created_at": "2025-04-19T18:22:30.853732Z",
             "service_provider_id": 1,
-            "service_receiver_id": 3,
-            "route_id": 40,
-            "plan_start_at": "2025-04-12T11:30:40.599970Z",
-            "plan_end_at": "2025-04-12T12:00:40.599970Z",
-            "status": "JOB_STATUS_ASSIGNED",
+            "service_receiver_id": 110,
+            "route_id": 210,
+            "plan_start_at": "2025-04-12T10:26:00Z",
+            "plan_end_at": "2025-04-12T10:57:00Z",
+            "status": "FINISHED",
             "pickup_location": {
-              "id": 3,
-              "name": "Инфекционная больница"
+              "id": 110,
+              "name": "Маолин"
             },
             "service_receiver": {
-              "id": 3,
-              "name": "Астанинский Ф.К. \"B&A Contractors SA\""
+              "id": 110,
+              "name": "Company 1-0"
             }
           }
         ]
       },
       {
-        "id": 41,
-        "created_at": "2025-04-12T14:00:00.000000Z",
+        "id": 211,
+        "created_at": "2025-04-19T18:22:30.853781Z",
         "owner_organization_id": 1,
-        "driver_on_shift_id": 19,
-        "source_lon": 76.566500,
-        "source_lat": 43.242100,
-        "destination_lon": 76.566700,
-        "destination_lat": 43.242300,
+        "driver_on_shift_id": 11,
+        "source_lon": 76.6093066988741,
+        "source_lat": 43.892400135526785,
+        "destination_lon": 77.3072902267061,
+        "destination_lat": 43.31050743277222,
         "author_id": 1,
-        "plan_start_at": "2025-04-12T14:00:00.000000Z",
-        "plan_end_at": "2025-04-12T15:00:00.000000Z",
+        "plan_start_at": "2025-04-12T14:28:00Z",
+        "plan_end_at": "2025-04-12T15:52:00Z",
         "fact_start_at": null,
         "fact_end_at": null,
         "status": "ROUTE_STATUS_CREATED",
         "created_by_ai": false,
         "jobs": [
           {
-            "id": 43,
-            "created_at": "2025-04-10T10:00:00.000000Z",
+            "id": 111,
+            "created_at": "2025-04-19T18:22:30.853770Z",
             "service_provider_id": 1,
-            "service_receiver_id": 4,
-            "route_id": 41,
-            "plan_start_at": "2025-04-12T14:10:00.000000Z",
-            "plan_end_at": "2025-04-12T15:40:00.000000Z",
+            "service_receiver_id": 111,
+            "route_id": 211,
+            "plan_start_at": "2025-04-12T14:28:00Z",
+            "plan_end_at": "2025-04-12T15:52:00Z",
             "status": "JOB_STATUS_ASSIGNED",
             "pickup_location": {
-              "id": 4,
-              "name": "Промзона"
+              "id": 111,
+              "name": "Школа Нурлы Дала"
             },
             "service_receiver": {
-              "id": 4,
-              "name": "ТОО «АлмазСтрой»"
+              "id": 111,
+              "name": "Company 1-1"
             }
           }
         ]
       },
       {
-        "id": 42,
-        "created_at": "2025-04-12T16:00:00.000000Z",
+        "id": 212,
+        "created_at": "2025-04-19T18:22:30.853817Z",
         "owner_organization_id": 1,
-        "driver_on_shift_id": 19,
-        "source_lon": 76.567000,
-        "source_lat": 43.243000,
-        "destination_lon": 76.568000,
-        "destination_lat": 43.244000,
+        "driver_on_shift_id": 11,
+        "source_lon": 77.43637653783195,
+        "source_lat": 43.93046100238454,
+        "destination_lon": 77.1131626532602,
+        "destination_lat": 44.03775728414365,
         "author_id": 1,
-        "plan_start_at": "2025-04-12T16:00:00.000000Z",
-        "plan_end_at": "2025-04-12T17:00:00.000000Z",
+        "plan_start_at": "2025-04-12T07:31:00Z",
+        "plan_end_at": "2025-04-12T08:46:00Z",
         "fact_start_at": null,
         "fact_end_at": null,
         "status": "ROUTE_STATUS_CREATED",
         "created_by_ai": false,
         "jobs": [
           {
-            "id": 44,
-            "created_at": "2025-04-10T11:00:00.000000Z",
+            "id": 112,
+            "created_at": "2025-04-19T18:22:30.853806Z",
             "service_provider_id": 1,
-            "service_receiver_id": 5,
-            "route_id": 42,
-            "plan_start_at": "2025-04-12T18:15:00.000000Z",
-            "plan_end_at": "2025-04-12T20:25:00.000000Z",
-            "status": "JOB_STATUS_ASSIGNED",
+            "service_receiver_id": 112,
+            "route_id": 212,
+            "plan_start_at": "2025-04-12T07:00:00Z",
+            "plan_end_at": "2025-04-12T08:00:00Z",
+            "status": "FINISHED",
             "pickup_location": {
-              "id": 5,
-              "name": "Центральный рынок"
+              "id": 112,
+              "name": "Нац Гвардия"
             },
             "service_receiver": {
-              "id": 5,
-              "name": "Osnova LTD"
+              "id": 112,
+              "name": "Company 1-2"
+            }
+          }
+        ]
+      },
+      {
+        "id": 213,
+        "created_at": "2025-04-19T18:22:30.853844Z",
+        "owner_organization_id": 1,
+        "driver_on_shift_id": 11,
+        "source_lon": 77.06950589593548,
+        "source_lat": 44.18709514651374,
+        "destination_lon": 76.80696768709747,
+        "destination_lat": 43.480273262336304,
+        "author_id": 1,
+        "plan_start_at": "2025-04-12T11:31:00Z",
+        "plan_end_at": "2025-04-12T12:30:00Z",
+        "fact_start_at": null,
+        "fact_end_at": null,
+        "status": "ROUTE_STATUS_CREATED",
+        "created_by_ai": false,
+        "jobs": [
+          {
+            "id": 113,
+            "created_at": "2025-04-19T18:22:30.853834Z",
+            "service_provider_id": 1,
+            "service_receiver_id": 113,
+            "route_id": 213,
+            "plan_start_at": "2025-04-12T11:31:00Z",
+            "plan_end_at": "2025-04-12T12:30:00Z",
+            "status": "JOB_STATUS_ASSIGNED",
+            "pickup_location": {
+              "id": 113,
+              "name": "Нац Гвардия"
+            },
+            "service_receiver": {
+              "id": 113,
+              "name": "Company 1-3"
             }
           }
         ]
@@ -126,123 +176,160 @@
   },
   {
     "truck": {
-      "id": 3,
-      "created_at": "2025-03-17T13:27:18.209317Z",
+      "id": 5,
+      "created_at": "2025-04-19T18:22:30.853853Z",
       "type": "TRUCK_TYPE_CONSTRUCTION",
-      "plate_number": " 222EX02",
+      "plate_number": "383BCJ02",
       "status": "TRUCK_STATUS_ACTIVE",
       "owner_organization_id": 1,
-      "model": "BMW Truck",
-      "truck_weight": 3470.498041809091
+      "model": "MAN 2",
+      "truck_weight": 3421.0
     },
     "routes": [
       {
-        "id": 40,
-        "created_at": "2025-04-12T10:21:01.542765Z",
+        "id": 220,
+        "created_at": "2025-04-19T18:22:30.853883Z",
         "owner_organization_id": 1,
-        "driver_on_shift_id": 19,
-        "source_lon": 76.566586,
-        "source_lat": 43.242206,
-        "destination_lon": 76.566586,
-        "destination_lat": 43.242206,
+        "driver_on_shift_id": 12,
+        "source_lon": 77.28081096426986,
+        "source_lat": 43.555408833586036,
+        "destination_lon": 76.93679016213795,
+        "destination_lat": 43.208136072324045,
         "author_id": 1,
-        "plan_start_at": "2025-04-12T10:21:01.599970Z",
-        "plan_end_at": "2025-04-12T13:31:16.599970Z",
-        "fact_start_at": null,
-        "fact_end_at": null,
-        "status": "ROUTE_STATUS_CREATED",
-        "created_by_ai": true,
-        "jobs": [
-          {
-            "id": 42,
-            "created_at": "2025-04-09T23:34:00.762921Z",
-            "service_provider_id": 1,
-            "service_receiver_id": 3,
-            "route_id": 40,
-            "plan_start_at": "2025-04-12T11:30:40.599970Z",
-            "plan_end_at": "2025-04-12T12:00:40.599970Z",
-            "status": "JOB_STATUS_ASSIGNED",
-            "pickup_location": {
-              "id": 3,
-              "name": "Инфекционная больница"
-            },
-            "service_receiver": {
-              "id": 3,
-              "name": "Астанинский Ф.К. \"B&A Contractors SA\""
-            }
-          }
-        ]
-      },
-      {
-        "id": 41,
-        "created_at": "2025-04-12T14:00:00.000000Z",
-        "owner_organization_id": 1,
-        "driver_on_shift_id": 19,
-        "source_lon": 76.566500,
-        "source_lat": 43.242100,
-        "destination_lon": 76.566700,
-        "destination_lat": 43.242300,
-        "author_id": 1,
-        "plan_start_at": "2025-04-12T14:00:00.000000Z",
-        "plan_end_at": "2025-04-12T15:00:00.000000Z",
+        "plan_start_at": "2025-04-12T09:15:00Z",
+        "plan_end_at": "2025-04-12T10:19:00Z",
         "fact_start_at": null,
         "fact_end_at": null,
         "status": "ROUTE_STATUS_CREATED",
         "created_by_ai": false,
         "jobs": [
           {
-            "id": 43,
-            "created_at": "2025-04-10T10:00:00.000000Z",
+            "id": 120,
+            "created_at": "2025-04-19T18:22:30.853873Z",
             "service_provider_id": 1,
-            "service_receiver_id": 4,
-            "route_id": 41,
-            "plan_start_at": "2025-04-12T14:10:00.000000Z",
-            "plan_end_at": "2025-04-12T15:40:00.000000Z",
+            "service_receiver_id": 120,
+            "route_id": 220,
+            "plan_start_at": "2025-04-12T09:15:00Z",
+            "plan_end_at": "2025-04-12T10:19:00Z",
             "status": "JOB_STATUS_ASSIGNED",
             "pickup_location": {
-              "id": 4,
-              "name": "Промзона"
+              "id": 120,
+              "name": "ЖК Аманат"
             },
             "service_receiver": {
-              "id": 4,
-              "name": "ТОО «АлмазСтрой»"
+              "id": 120,
+              "name": "Company 2-0"
             }
           }
         ]
       },
       {
-        "id": 42,
-        "created_at": "2025-04-12T16:00:00.000000Z",
+        "id": 221,
+        "created_at": "2025-04-19T18:22:30.853911Z",
         "owner_organization_id": 1,
-        "driver_on_shift_id": 19,
-        "source_lon": 76.567000,
-        "source_lat": 43.243000,
-        "destination_lon": 76.568000,
-        "destination_lat": 43.244000,
+        "driver_on_shift_id": 12,
+        "source_lon": 76.95540841945181,
+        "source_lat": 43.69153756049929,
+        "destination_lon": 76.77265860892827,
+        "destination_lat": 43.928997368915546,
         "author_id": 1,
-        "plan_start_at": "2025-04-12T16:00:00.000000Z",
-        "plan_end_at": "2025-04-12T17:00:00.000000Z",
+        "plan_start_at": "2025-04-12T11:18:00Z",
+        "plan_end_at": "2025-04-12T12:06:00Z",
         "fact_start_at": null,
         "fact_end_at": null,
         "status": "ROUTE_STATUS_CREATED",
         "created_by_ai": false,
         "jobs": [
           {
-            "id": 44,
-            "created_at": "2025-04-10T11:00:00.000000Z",
+            "id": 121,
+            "created_at": "2025-04-19T18:22:30.853901Z",
             "service_provider_id": 1,
-            "service_receiver_id": 5,
-            "route_id": 42,
-            "plan_start_at": "2025-04-12T18:15:00.000000Z",
-            "plan_end_at": "2025-04-12T20:25:00.000000Z",
+            "service_receiver_id": 121,
+            "route_id": 221,
+            "plan_start_at": "2025-04-12T11:18:00Z",
+            "plan_end_at": "2025-04-12T12:06:00Z",
             "status": "JOB_STATUS_ASSIGNED",
             "pickup_location": {
-              "id": 5,
-              "name": "Центральный рынок"
+              "id": 121,
+              "name": "Школа Кайрат"
             },
             "service_receiver": {
-              "id": 5,
-              "name": "Osnova LTD"
+              "id": 121,
+              "name": "Company 2-1"
+            }
+          }
+        ]
+      },
+      {
+        "id": 222,
+        "created_at": "2025-04-19T18:22:30.853972Z",
+        "owner_organization_id": 1,
+        "driver_on_shift_id": 12,
+        "source_lon": 76.50134917160226,
+        "source_lat": 43.5974187246939,
+        "destination_lon": 77.05743058710053,
+        "destination_lat": 43.698455217469295,
+        "author_id": 1,
+        "plan_start_at": "2025-04-12T09:39:00Z",
+        "plan_end_at": "2025-04-12T10:11:00Z",
+        "fact_start_at": null,
+        "fact_end_at": null,
+        "status": "ROUTE_STATUS_CREATED",
+        "created_by_ai": false,
+        "jobs": [
+          {
+            "id": 122,
+            "created_at": "2025-04-19T18:22:30.853958Z",
+            "service_provider_id": 1,
+            "service_receiver_id": 122,
+            "route_id": 222,
+            "plan_start_at": "2025-04-12T09:39:00Z",
+            "plan_end_at": "2025-04-12T10:11:00Z",
+            "status": "JOB_STATUS_ASSIGNED",
+            "pickup_location": {
+              "id": 122,
+              "name": "Школа Шыгыла"
+            },
+            "service_receiver": {
+              "id": 122,
+              "name": "Company 2-2"
+            }
+          }
+        ]
+      },
+      {
+        "id": 223,
+        "created_at": "2025-04-19T18:22:30.854231Z",
+        "owner_organization_id": 1,
+        "driver_on_shift_id": 12,
+        "source_lon": 77.31930778424442,
+        "source_lat": 43.28632912708528,
+        "destination_lon": 76.66385336833338,
+        "destination_lat": 43.920732370111324,
+        "author_id": 1,
+        "plan_start_at": "2025-04-12T12:41:00Z",
+        "plan_end_at": "2025-04-12T13:23:00Z",
+        "fact_start_at": null,
+        "fact_end_at": null,
+        "status": "ROUTE_STATUS_CREATED",
+        "created_by_ai": false,
+        "jobs": [
+          {
+            "id": 123,
+            "created_at": "2025-04-19T18:22:30.854217Z",
+            "service_provider_id": 1,
+            "service_receiver_id": 123,
+            "route_id": 223,
+            "plan_start_at": "2025-04-12T12:41:00Z",
+            "plan_end_at": "2025-04-12T13:23:00Z",
+            "status": "JOB_STATUS_ASSIGNED",
+            "pickup_location": {
+              "id": 123,
+              "name": "Школа Кайрат"
+            },
+            "service_receiver": {
+              "id": 123,
+              "name": "Company 2-3"
             }
           }
         ]

@@ -37,30 +37,40 @@ function getJobStyle(job: any) {
   if (duration < 0)
     duration += 24
 
+  const labelWidth = 80
+  const offsetPx = (startHours - 1) * pxPerHour + (labelWidth - 50)
+
   return {
-    left: `${startHours * pxPerHour - pxPerHour}px`,
-    width: `calc(${duration * pxPerHour}px)`,
+    left: `${offsetPx}px`,
+    width: `${duration * pxPerHour}px`,
   }
 }
 
 const redLineX = ref(currentTimeOffset.value)
 const boardRef = ref<HTMLElement | null>(null)
-let isDragging = false
 
-function startDrag() {
+let isDragging = false
+let dragOffset = 0
+
+function startDrag(event: MouseEvent | TouchEvent) {
   isDragging = true
+  const clientX = 'touches' in event ? event.touches[0].clientX : event.clientX
+  const rect = boardRef.value?.getBoundingClientRect()
+  if (rect)
+    dragOffset = clientX - rect.left - redLineX.value
 }
 
 function stopDrag() {
   isDragging = false
 }
 
-function onDrag(event: MouseEvent) {
+function onDrag(event: MouseEvent | TouchEvent) {
   if (!isDragging || !boardRef.value)
     return
 
+  const clientX = 'touches' in event ? event.touches[0].clientX : event.clientX
   const rect = boardRef.value.getBoundingClientRect()
-  const x = event.clientX - rect.left
+  const x = clientX - rect.left - dragOffset
 
   redLineX.value = Math.max(0, Math.min(x, rect.width))
 }
@@ -68,6 +78,9 @@ function onDrag(event: MouseEvent) {
 onMounted(() => {
   window.addEventListener('mousemove', onDrag)
   window.addEventListener('mouseup', stopDrag)
+
+  window.addEventListener('touchmove', onDrag)
+  window.addEventListener('touchend', stopDrag)
 })
 </script>
 
@@ -84,7 +97,7 @@ onMounted(() => {
       </div>
 
       <div class="text-black mx-auto p-10 h-auto min-h-[338px] w-[1028px] relative overflow-auto">
-        <div class="relative" :style="{ width: `${hours.length * pxPerHour + 64}px` }">
+        <div class="relative" :style="{ width: `${hours.length * pxPerHour - 64}px` }">
           <div class="bg-white flex top-0 sticky z-10">
             <div class="shrink-0 w-20" />
             <div class="flex flex-1">
@@ -127,6 +140,7 @@ onMounted(() => {
             class="bg-black w-[2px] cursor-ew-resize top-[32px] absolute z-20"
             :style="{ left: `${redLineX}px`, height: `${trucks.length * 100}px` }"
             @mousedown="startDrag"
+            @touchstart="startDrag"
           >
             <div class="rounded-full bg-black h-4 w-4 transform top-0 absolute -translate-x-[50%] -left-4" />
           </div>
