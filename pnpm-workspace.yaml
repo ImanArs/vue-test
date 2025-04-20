@@ -1,8 +1,5 @@
 packages: []
 
-catalog:
-  lucide-vue: ^0.488.0
-  lucide-vue-next: ^0.488.0
 catalogs:
 
   build:
@@ -34,9 +31,9 @@ catalogs:
 
   frontend:
     '@vueuse/core': ^13.0.0
+    lucide-vue-next: ^0.488.0
     vue: ^3.5.13
     vue-router: ^4.5.0
-
 onlyBuiltDependencies:
   - esbuild
   - simple-git-hooks
