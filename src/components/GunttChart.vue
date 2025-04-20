@@ -20,9 +20,9 @@ const currentTimeOffset = computed(() => {
 
 function getStatusColor(status: string) {
   if (status.includes('finished'))
-    return 'bg-gray-500'
+    return 'bg-gray-500/60'
   if (status.includes('in_progress'))
-    return 'bg-blue-600'
+    return 'bg-blue-600/80'
   return 'bg-blue-300'
 }
 
