@@ -19,9 +19,9 @@ const currentTimeOffset = computed(() => {
 })
 
 function getStatusColor(status: string) {
-  if (status.includes('FINISHED'))
+  if (status.includes('finished'))
     return 'bg-gray-500'
-  if (status.includes('IN_PROGRESS'))
+  if (status.includes('in_progress'))
     return 'bg-blue-600'
   return 'bg-blue-300'
 }
@@ -112,7 +112,7 @@ onMounted(() => {
             </div>
           </div>
 
-          <div v-for="truck in trucks" :key="truck.truck.id" class="flex h-16 items-center">
+          <div v-for="truck in trucks" :key="truck.truck.id" class="flex h-11 items-center">
             <div class="text-base text-white p-2 rounded-[6px_0px_0px_6px] bg-[#333] shrink-0 max-h-10 w-20 select-none">
               {{ truck.truck.plate_number.trim() }}
             </div>
@@ -126,7 +126,7 @@ onMounted(() => {
                 <div
                   v-for="job in route.jobs"
                   :key="`job-${job.id}`"
-                  class="text-xs px-2 rounded-[12px] flex h-10 items-center absolute"
+                  class="text-[10px] text-white px-2 rounded-[12px] flex h-10 items-center absolute"
                   :style="getJobStyle(job)"
                   :class="getStatusColor(job.status)"
                 >
